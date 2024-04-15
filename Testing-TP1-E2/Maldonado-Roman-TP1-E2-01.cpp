@@ -9,7 +9,6 @@ int factorial(int num) {
     }
 
     int facto = 1;
-
     while (num > 0) {
         facto *= num;
         num -= 1;
@@ -23,12 +22,11 @@ int main() {
 
     cout << "Ingresa un numero para ver su factorial: " << endl;
     cin >> num;
-
     try{
         int result = factorial(num);
         cout << "> El factorial es: " << result << endl;
     } catch(const char *mensaje){
-        cout << "Error" << mensaje << endl;
+        cout << "> Error: " << mensaje << endl;
     }
 
     return 0;
