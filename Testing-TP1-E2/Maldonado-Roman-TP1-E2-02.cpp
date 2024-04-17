@@ -5,13 +5,12 @@ using namespace std;
 int areaA(float base, float altura){
     float aux;
 
-    if(base == 0){
-        throw "no puedes obtener el area de un triangulo cuya Base es 0";
+    if(base <= 0){
+        throw "no puedes obtener el area de un triangulo cuya Base es 0 o un numero negativo!";
     }
-    else if (altura == 0){
-        throw "no puedes obtener el area de un triangulo cuya Altura es 0";
+    else if (altura <= 0){
+        throw "no puedes obtener el area de un triangulo cuya Altura es 0 o un numero negativo!";
     }
-    
 
     aux = (base * altura) / 2;
     return aux;

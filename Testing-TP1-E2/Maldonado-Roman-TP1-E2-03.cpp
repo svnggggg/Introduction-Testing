@@ -3,10 +3,6 @@
 using namespace std;
 
 int par(int num){
-    if(num < 0){
-        throw "el numero que ingresaste es negativo";
-    }
-
     if(num % 2 == 0){
         cout << "> El numero " << num << " es par!" << endl;
         return 0;
@@ -25,6 +21,10 @@ int main(){
     cin >> num; 
 
     try{
+        if(num < 0){
+            throw "el numero que ingresaste es negativo";
+        }
+
         int result = par(num);
     }
     catch(const char *mensaje)
