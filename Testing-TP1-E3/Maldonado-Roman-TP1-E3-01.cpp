@@ -39,7 +39,7 @@ int main() {
         cin >> cadena;
 
         if (!esNegativo(num) && !esPalabra(cadena)) {
-            num = stoi(cadena);
+            num = stoi(cadena); // Convierte un numero entero a una cadena
             int result = factorial(num);
             cout << "> El factorial es: " << result << endl;
             break;

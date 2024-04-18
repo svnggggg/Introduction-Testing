@@ -46,7 +46,7 @@ int main() {
 
         if (!esPalabra(cadenaBase) && !esPalabra(cadenaAltura)) {
             base = stof(cadenaBase);  // Convertir cadena a float
-            altura = stof(cadenaAltura);  // Convertir cadena a float
+            altura = stof(cadenaAltura);
 
         if (!esNegativo(base, altura)) {
             float result = area(base, altura);
