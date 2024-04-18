@@ -11,8 +11,8 @@ long long factorial(int num) {
     return facto;
 }
 
-bool esNegativo(int num) {
-    if (num < 0) {
+bool esNegativo(int num){
+    if (num < 0){
         cout << "> Su numero es negativo!" << endl;
         return true;
     }
