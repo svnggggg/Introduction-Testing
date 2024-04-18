@@ -5,13 +5,6 @@ using namespace std;
 int areaA(float base, float altura){
     float aux;
 
-    if(base <= 0){
-        throw "no puedes obtener el area de un triangulo cuya Base es 0 o un numero negativo!";
-    }
-    else if (altura <= 0){
-        throw "no puedes obtener el area de un triangulo cuya Altura es 0 o un numero negativo!";
-    }
-
     aux = (base * altura) / 2;
     return aux;
 }
@@ -26,6 +19,20 @@ int main() {
     cin >> altura;
 
     try{
+        if(base <= 0){
+            throw "su entrada es invalida, puede que estes ingresando un numero negativo o 0 como 'Base' o en ambos casos!";
+            return 1;
+        }
+        else if (altura <= 0){
+            throw "su entrada es invalida, puede que estes ingresando un numero negativo o 0 como 'Area' o en ambos casos!";
+            return 1;
+        }
+        if(cin.fail()){
+            cin.clear(); 
+            throw "su entrada es invalida!";
+            return 1;
+        }
+
         float area = areaA(base, altura);
         cout << "> El area del triangulo es de: " << area << endl; 
     }

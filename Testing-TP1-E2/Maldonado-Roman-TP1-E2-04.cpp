@@ -2,12 +2,8 @@
 using namespace std;
 
 int promedio(int n1, int n2, int n3){
-    if (n1 < 0 || n2 < 0 || n3 < 0)
-    {
-        throw "su nota es negativa!";
-    }
-    
     int aux = (n1 + n2 + n3) / 3;
+    return aux;
 }
 
 int main(){
@@ -22,8 +18,17 @@ int main(){
 	cout << "> Porfavor digite su nota 3: " << endl; 
 	cin >> n3;
 
-    try
-    {
+    try{
+        if (n1 < 0 || n2 < 0 || n3 < 0){
+            throw "su nota es negativa!";
+            return 1;
+        }
+        if(cin.fail()){
+            cin.clear(); 
+            throw "su entrada es invalida!";
+            return 1;
+        }
+
         int result = promedio(n1, n2, n3);
         cout << "> Su nota final es de: " << result << endl;
     }

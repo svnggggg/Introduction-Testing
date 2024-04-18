@@ -11,13 +11,13 @@ int suma(){
         result += 1;
         cont += 1;
     }
-    
-    cout << "> El resultado de la suma de los 5 primeros numeros naturales es: " << result << endl;
+
     return result;
 }
 
 void unitTest(){
     assert(suma() == 16);
+    
     cout << "> Testeo unitario exitoso!" << endl;
 }
 

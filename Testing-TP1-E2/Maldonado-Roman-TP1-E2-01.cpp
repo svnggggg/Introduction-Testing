@@ -20,7 +20,14 @@ int main() {
 
     try{
         if(num < 0){
-            throw " su numero es negativo, no se puede sacar factorial de un numero negativo!";
+            throw "su numero es negativo, no se puede sacar factorial de un numero negativo!";
+            return 1;
+        }
+
+        if(cin.fail()){ // Si la entrada es algo q nada q ver
+            cin.clear(); 
+            throw "su entrada es invalida!";
+            return 1;
         }
 
         int result = factorial(num);

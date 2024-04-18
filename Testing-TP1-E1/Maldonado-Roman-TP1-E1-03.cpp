@@ -2,22 +2,23 @@
 #include <cassert>
 using namespace std;
 
-int par(int num){
+bool par(int num){
     if(num % 2 == 0){
-        cout << "> El numero " << num << " es par!" << endl;
-        return 0;
+        return true;
     }
 
     else{
-        cout << "> El numero " << num << " es impar!" << endl;
-        return 1;
+        return false;
     }
 }
 
 void unitTest(){
-    assert(par(2) == 0);
-    assert(par(3) == 1);
-    assert(par(10) == 0);
+    assert(par(2) == 1);
+    assert(par(3) == 0);
+    assert(par(10) == 1);
+    assert(par(100) == 1);
+    assert(par(9999) == 0);
+    
     cout << "> Testeo unitario exitoso!" << endl;
 }
 

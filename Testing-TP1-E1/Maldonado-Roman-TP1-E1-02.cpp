@@ -4,7 +4,6 @@ using namespace std;
 
 int triangulo(float base, float altura) { 
     float area = (base * altura) / 2;
-    cout << "> El area de su triangulo es de: " << area << endl;
 
     return area;
 }
@@ -12,7 +11,8 @@ int triangulo(float base, float altura) {
 void unitTest() { 
     assert(triangulo(2, 2) == 2); 
     assert(triangulo(6, 6) == 18); 
-    cout << "> Testeo Unitario exitoso!" << endl;
+
+    cout << "> Testeo unitario exitoso!" << endl;
 }
 
 int main() {
