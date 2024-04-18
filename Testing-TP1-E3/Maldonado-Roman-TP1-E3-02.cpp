@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cassert>
+#include <string>
 using namespace std;
 
 int area(float base, float altura){
@@ -23,22 +23,37 @@ bool esNegativo(float base, float altura){
     return false;
 }
 
+bool esPalabra(const string & str){
+    for (char c : str){
+        if (!isdigit(c)){
+            cout << "> Su cadena de texto es intocable!" << endl;
+            return true;
+        }
+    }
+    return false;
+}
+
 int main() {
     float base, altura;
+    string cadenaBase, cadenaAltura;
 
     while (true) {
         cout << "> Ingresa una Base de su triangulo: " << endl;
-        cin >> base;
+        cin >> cadenaBase;
 
         cout << "> Ingresa una Altura de su triangulo: " << endl;
-        cin >> altura;
+        cin >> cadenaAltura;
+
+        if (!esPalabra(cadenaBase) && !esPalabra(cadenaAltura)) {
+            base = stof(cadenaBase);  // Convertir cadena a float
+            altura = stof(cadenaAltura);  // Convertir cadena a float
 
         if (!esNegativo(base, altura)) {
             float result = area(base, altura);
             cout << "> El Area del triangulo es: " << result << endl;
             break;
         }
-    }
-
-    return 0;
+    }   
+}
+return 0;
 }

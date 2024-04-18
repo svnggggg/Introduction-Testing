@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cassert>
+#include <string>
 using namespace std;
 
 bool par(int num){
@@ -20,15 +20,28 @@ bool esNegativo(int num){
     return false;
 }
 
+bool esPalabra(const string & str){
+    for (char c : str){
+        if (!isdigit(c)){
+            cout << "> Su cadena de texto es intocable!" << endl;
+            return true;
+        }
+    }
+    return false;
+}
+
+
 int main(){
     int num;
+    string cadena;
 
     while (true)
     {
         cout << "> Ingresa un numero: " << endl;
-        cin >> num; 
+        cin >> cadena; 
 
-        if(!esNegativo(num)){
+        if (!esNegativo(num) && !esPalabra(cadena)) {
+            num = stoi(cadena);
             int result = par(num);
             if(par(num)){
                 cout << "> El numero " << num << " es par!" << endl;

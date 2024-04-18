@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 int mcd(int a, int b) {
@@ -25,16 +26,31 @@ bool esNegativo(int a, int b){
     return false;
 }
 
+bool esPalabra(const string & str){
+    for (char c : str){
+        if (!isdigit(c)){
+            cout << "> Su cadena de texto es intocable!" << endl;
+            return true;
+        }
+    }
+    return false;
+}
+
 int main(){
     int a, b;
+    string cadenaA, cadenaB;
 
     while (true)
     {
         cout << "Ingresa A: ";
-        cin >> a;
+        cin >> cadenaA;
 
         cout << "Ingresa B: ";
-        cin >> b;
+        cin >> cadenaB;
+
+        if (!esPalabra(cadenaA) && !esPalabra(cadenaB)) {
+            a = stof(cadenaA);
+            b = stof(cadenaB);  
 
         if(!esNegativo(a,b)){
             int result = mcd(a, b);
@@ -42,5 +58,6 @@ int main(){
             break;
         }
     }
-    return 0;
+}
+return 0;
 }
