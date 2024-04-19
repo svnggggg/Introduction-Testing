@@ -1,5 +1,5 @@
 #include <iostream>
-#include <cassert>
+
 using namespace std;
 
 long long factorial(int num) {
